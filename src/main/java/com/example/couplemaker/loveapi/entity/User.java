@@ -31,8 +31,9 @@ public class User {
     @Column(nullable = false)
     private String name;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String authority;
+    private Authority authority;
 
     @Column(name = "reg_date")
     @CreationTimestamp
