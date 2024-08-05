@@ -2,6 +2,7 @@ package com.example.couplemaker.loveapi.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -17,6 +18,7 @@ import java.util.Date;
 public class User {
 
     @Id
+    @Column(name = "user_no")
     @GeneratedValue(strategy = GenerationType.UUID)
     private String userNo;
 
@@ -32,7 +34,9 @@ public class User {
     @Column(nullable = false)
     private String authority;
 
-    private Date reg_date;
+    @Column(name = "reg_date")
+    @CreationTimestamp
+    private Date regDate;
 
     private String address;
 
@@ -41,16 +45,19 @@ public class User {
 
     private String job;
 
+    @Column(name = "profile_img")
     private String profileImg;
 
+    @Column(name = "born_date")
     private Date bornDate;
 
     private String mbti;
 
 
-    @Column(length = 400)
+    @Column(name = "refresh_token", length = 400)
     private String refreshToken;
 
+    @Column(name = "refresh_token_expiry_date")
     private Date refreshTokenExpiryDate;
 
     @Column(precision = 4, scale = 2)
