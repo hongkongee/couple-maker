@@ -1,5 +1,8 @@
 package com.example.couplemaker;
 
+import com.p6spy.engine.logging.Category;
+import com.p6spy.engine.spy.P6SpyOptions;
+import com.p6spy.engine.spy.appender.MessageFormattingStrategy;
 import jakarta.annotation.PostConstruct;
 import org.hibernate.engine.jdbc.internal.FormatStyle;
 
@@ -30,3 +33,4 @@ public class P6SpySqlFormatter implements MessageFormattingStrategy {
         }
         return sql;
     }
+}
