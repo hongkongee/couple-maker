@@ -22,10 +22,10 @@ public class User {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String userNo;
 
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false, length = 32)
     private String email;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 20)
     private String password;
 
     @Column(nullable = false)
@@ -63,8 +63,6 @@ public class User {
 
     @Column(precision = 4, scale = 2)
     private BigDecimal score;
-
-
 
 
 
